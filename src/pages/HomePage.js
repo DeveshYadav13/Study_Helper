@@ -17,7 +17,7 @@ const HomePage = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Paper style={{ padding: '20px' }}>
-            <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', color: '#333', fontWeight: 'bold' }}>
+              <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', color: '#333', fontWeight: 'bold' }}>
                 Select a subject
               </Typography>
               <Sidebar subjects={subjects} selectedSubject={selectedSubject} onSelectSubject={setSelectedSubject} />
@@ -25,16 +25,17 @@ const HomePage = () => {
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper style={{ padding: '20px' }}>
-            <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', color: '#333', fontWeight: 'bold' }}>
-                {selectedSubject.name} : Akash
+              <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', color: '#333', fontWeight: 'bold' }}>
+                {selectedSubject.name === 'STRIT' ? 'STRIT : Notes' : `${selectedSubject.name} : Akash`}
               </Typography>
+
               <PDFList materials={selectedSubject.materials} />
             </Paper>
           </Grid>
         </Grid>
       </Box>
       {/* add space between this */}
-      <Footer /> 
+      <Footer />
     </Container>
   );
 };

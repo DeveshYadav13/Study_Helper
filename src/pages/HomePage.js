@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold' }}>
+      <Typography variant="h3" gutterBottom style={{ paddingTop: '10px', fontWeight: 'bold' }}>
         Akash - IT
       </Typography>
       <Box mt={4}>

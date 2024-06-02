@@ -3,7 +3,7 @@ import { List, ListItem, ListItemText } from '@mui/material';
 
 const Sidebar = ({ subjects, selectedSubject, onSelectSubject }) => {
   return (
-    <List>
+    <List style={{ lineHeight: '2' }}>
       {subjects.map((subject, index) => (
         <ListItem
           button

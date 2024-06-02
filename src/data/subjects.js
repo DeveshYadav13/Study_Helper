@@ -12,6 +12,24 @@ const subjects = [
         { title: "Mechanics", url: "/path/to/mechanics.pdf" }
       ]
     },
+    {
+      name: "Physics",
+      materials: [
+        { title: "Mechanics", url: "/path/to/mechanics.pdf" }
+      ]
+    },
+    {
+      name: "Physics",
+      materials: [
+        { title: "Mechanics", url: "/path/to/mechanics.pdf" }
+      ]
+    },
+    {
+      name: "Physics",
+      materials: [
+        { title: "Mechanics", url: "/path/to/mechanics.pdf" }
+      ]
+    }
     // Add more subjects and materials as needed
   ];
   

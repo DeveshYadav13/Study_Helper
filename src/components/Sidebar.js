@@ -1,16 +1,31 @@
 import React from 'react';
+import { List, ListItem, ListItemText } from '@mui/material';
 
-const Sidebar = ({ subjects, onSelectSubject }) => {
+const Sidebar = ({ subjects, selectedSubject, onSelectSubject }) => {
   return (
-    <div className="sidebar">
-      <ul>
-        {subjects.map((subject, index) => (
-          <li key={index} onClick={() => onSelectSubject(subject)}>
-            {subject.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <List>
+      {subjects.map((subject, index) => (
+        <ListItem
+          button
+          key={index}
+          onClick={() => onSelectSubject(subject)}
+          selected={selectedSubject.name === subject.name}
+          sx={{
+            '&.Mui-selected': {
+              backgroundColor: '#d0e7ff',
+              '&:hover': {
+                backgroundColor: '#c0d6ff',
+              },
+            },
+            '&:hover': {
+              backgroundColor: '#e0f0ff',
+            },
+          }}
+        >
+          <ListItemText primary={subject.name} />
+        </ListItem>
+      ))}
+    </List>
   );
 };
 

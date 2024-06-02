@@ -15,13 +15,12 @@ const HomePage = () => {
       <Box mt={4}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
-            <Sidebar subjects={subjects} selectedSubject={selectedSubject} onSelectSubject={setSelectedSubject} />
+            <Paper style={{ padding: '20px' }}>
+              <Sidebar subjects={subjects} selectedSubject={selectedSubject} onSelectSubject={setSelectedSubject} />
+            </Paper>
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper style={{ padding: '20px' }}>
-              <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px' }}>
-                {selectedSubject.name} : Akash
-              </Typography>
               <PDFList materials={selectedSubject.materials} />
             </Paper>
           </Grid>

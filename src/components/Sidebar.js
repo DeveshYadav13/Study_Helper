@@ -1,31 +1,32 @@
 import React from 'react';
-import { List, ListItem, ListItemText } from '@mui/material';
+import { List, ListItem, ListItemText, Paper, Typography } from '@mui/material';
 
 const Sidebar = ({ subjects, selectedSubject, onSelectSubject }) => {
   return (
-    <List style={{ lineHeight: '2' }}>
-      {subjects.map((subject, index) => (
-        <ListItem
-          button
-          key={index}
-          onClick={() => onSelectSubject(subject)}
-          selected={selectedSubject.name === subject.name}
-          sx={{
-            '&.Mui-selected': {
-              backgroundColor: '#d0e7ff',
-              '&:hover': {
-                backgroundColor: '#c0d6ff',
+    <Paper style={{ height: '100%' }}>
+      <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px' }}>
+        Choose the Subject
+      </Typography>
+      <List style={{ lineHeight: '2', height: 'calc(100% - 40px)', overflowY: 'auto' }}>
+        {subjects.map((subject, index) => (
+          <ListItem
+            button
+            key={index}
+            onClick={() => onSelectSubject(subject)}
+            selected={selectedSubject.name === subject.name}
+            sx={{
+              '&.Mui-selected': {
+                backgroundColor: '#d0e7ff',
               },
-            },
-            '&:hover': {
-              backgroundColor: '#e0f0ff',
-            },
-          }}
-        >
-          <ListItemText primary={subject.name} />
-        </ListItem>
-      ))}
-    </List>
+              paddingLeft: '30px', // Add left padding
+              paddingRight: '20px', // Add right padding
+            }}
+          >
+            <ListItemText primary={subject.name} />
+          </ListItem>
+        ))}
+      </List>
+    </Paper>
   );
 };
 

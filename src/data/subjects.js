@@ -32,13 +32,21 @@ const subjects = [
     {
       name: "SC",
       materials: [
-        { title: "Mechanics", url: "/path/to/mechanics.pdf" }
+        { title: "2017", url: "/path/to/ASN_2017.pdf" },
+        { title: "2018", url: "/path/to/ASN_2018.pdf" },
+        { title: "2019", url: "/path/to/ASN_2019.pdf" },
+        { title: "2023", url: "/path/to/ASN_2023.pdf" },
+        { title: "All", url: "/path/to/ASN.pdf" }
       ]
     },
     {
-      name: "Physics",
+      name: "STRIT",
       materials: [
-        { title: "Mechanics", url: "/path/to/mechanics.pdf" }
+        { title: "2017", url: "/path/to/ASN_2017.pdf" },
+        { title: "2018", url: "/path/to/ASN_2018.pdf" },
+        { title: "2019", url: "/path/to/ASN_2019.pdf" },
+        { title: "2023", url: "/path/to/ASN_2023.pdf" },
+        { title: "All", url: "/path/to/ASN.pdf" }
       ]
     }
     // Add more subjects and materials as needed

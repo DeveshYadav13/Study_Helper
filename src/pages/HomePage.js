@@ -10,10 +10,10 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Typography variant="h3" gutterBottom style={{ paddingTop: '10px', fontWeight: 'bold' }}>
+      <Typography variant="h3" gutterBottom style={{ paddingTop: '20px', fontWeight: 'bold' }}>
         Akash - IT
       </Typography>
-      <Box mt={4}>
+      <Box mt={4} mb={6}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Paper style={{ padding: '20px' }}>
@@ -33,6 +33,7 @@ const HomePage = () => {
           </Grid>
         </Grid>
       </Box>
+      {/* add space between this */}
       <Footer /> 
     </Container>
   );

@@ -16,11 +16,17 @@ const HomePage = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Paper style={{ padding: '20px' }}>
+            <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px' }}>
+                Select a subject
+              </Typography>
               <Sidebar subjects={subjects} selectedSubject={selectedSubject} onSelectSubject={setSelectedSubject} />
             </Paper>
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper style={{ padding: '20px' }}>
+            <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px' }}>
+                {selectedSubject.name} : Akash
+              </Typography>
               <PDFList materials={selectedSubject.materials} />
             </Paper>
           </Grid>

@@ -5,6 +5,7 @@ const subjects = [
         { title: "2017", url: "/path/to/HVPE_2017.pdf" },
         { title: "2018", url: "/path/to/HVPE_2018.pdf" },
         { title: "2019", url: "/path/to/HVPE_2019.pdf" },
+        { title: "2020", url: "/path/to/HVPE_2020.pdf" },
         { title: "2023", url: "/path/to/HVPE_2023.pdf" },
         { title: "All", url: "/path/to/HVPE.pdf" }
       ]
@@ -15,6 +16,7 @@ const subjects = [
         { title: "2017", url: "/path/to/MC_2017.pdf" },
         { title: "2018", url: "/path/to/MC_2018.pdf" },
         { title: "2019", url: "/path/to/MC_2019.pdf" },
+        { title: "2020", url: "/path/to/MC_2020.pdf" },
         { title: "2023", url: "/path/to/MC_2023.pdf" },
         { title: "All", url: "/path/to/MC.pdf" }
       ]
@@ -25,6 +27,7 @@ const subjects = [
         { title: "2017", url: "/path/to/ASN_2017.pdf" },
         { title: "2018", url: "/path/to/ASN_2018.pdf" },
         { title: "2019", url: "/path/to/ASN_2019.pdf" },
+        { title: "2020", url: "/path/to/ASN_2020.pdf" },
         { title: "2023", url: "/path/to/ASN_2023.pdf" },
         { title: "All", url: "/path/to/ASN.pdf" }
       ]
@@ -35,7 +38,7 @@ const subjects = [
         { title: "2017", url: "/path/to/SC_2017.pdf" },
         { title: "2018", url: "/path/to/SC_2018.pdf" },
         { title: "2019", url: "/path/to/SC_2019.pdf" },
-        // { title: "2023", url: "/path/to/SC_2023.pdf" },
+        { title: "2020", url: "/path/to/SC_2020.pdf" },
         { title: "All", url: "/path/to/SC.pdf" }
       ]
     },

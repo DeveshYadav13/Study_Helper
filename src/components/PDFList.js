@@ -1,14 +1,23 @@
 import React from 'react';
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@mui/material';
+import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Checkbox, FormControlLabel } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import DownloadIcon from '@mui/icons-material/Download';
 
-const PDFList = ({ materials }) => {
+const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
   return (
     <List>
       {materials.map((material, index) => (
-        <ListItem key={index}>
-          <ListItemText primary={material.title} />
+        <ListItem key={index} style={{ display: 'flex', alignItems: 'center' }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={progress.includes(material.title)}
+                onChange={() => onToggleProgress(subjectName, material.title)}
+                color="primary"
+              />
+            }
+            label={<ListItemText primary={material.title} />}
+          />
           <ListItemSecondaryAction>
             <IconButton
               edge="end"

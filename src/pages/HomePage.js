@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Typography, Box, Paper, Grid } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import PDFList from '../components/PDFList';
@@ -7,6 +7,31 @@ import Footer from '../components/Footer';
 
 const HomePage = () => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
+  const [progress, setProgress] = useState(() => {
+    // Load progress from localStorage
+    const savedProgress = localStorage.getItem('progress');
+    return savedProgress ? JSON.parse(savedProgress) : {};
+  });
+
+  useEffect(() => {
+    // Save progress to localStorage whenever it changes
+    localStorage.setItem('progress', JSON.stringify(progress));
+  }, [progress]);
+
+  const handleToggleProgress = (subjectName, pdfTitle) => {
+    setProgress(prevProgress => {
+      const updatedProgress = { ...prevProgress };
+      if (!updatedProgress[subjectName]) {
+        updatedProgress[subjectName] = [];
+      }
+      if (updatedProgress[subjectName].includes(pdfTitle)) {
+        updatedProgress[subjectName] = updatedProgress[subjectName].filter(title => title !== pdfTitle);
+      } else {
+        updatedProgress[subjectName].push(pdfTitle);
+      }
+      return updatedProgress;
+    });
+  };
 
   return (
     <Container>
@@ -28,13 +53,16 @@ const HomePage = () => {
               <Typography variant="subtitle2" gutterBottom style={{ textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', color: '#333', fontWeight: 'bold' }}>
                 {selectedSubject.name === 'STRIT' ? 'STRIT : Notes' : `${selectedSubject.name} : Akash`}
               </Typography>
-
-              <PDFList materials={selectedSubject.materials} />
+              <PDFList
+                materials={selectedSubject.materials}
+                progress={progress[selectedSubject.name] || []}
+                onToggleProgress={handleToggleProgress}
+                subjectName={selectedSubject.name}
+              />
             </Paper>
           </Grid>
         </Grid>
       </Box>
-      {/* add space between this */}
       <Footer />
     </Container>
   );

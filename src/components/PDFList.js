@@ -22,7 +22,7 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
 
   const openModal = (title) => {
     setCurrentTitle(title);
-    setCurrentNote(notes[title] || '');
+    setCurrentNote(notes[`${subjectName}-${title}`] || '');
     setIsOpen(true);
   };
 
@@ -33,7 +33,7 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
   const saveNote = () => {
     setNotes(prevNotes => ({
       ...prevNotes,
-      [currentTitle]: currentNote,
+      [`${subjectName}-${currentTitle}`]: currentNote,
     }));
     closeModal();
   };
@@ -45,16 +45,7 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
       </Typography>
       <List>
         {materials.map((material, index) => (
-          <ListItem
-            key={index}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '8px 0', // Adjusted padding
-            }}
-          >
-
+          <ListItem key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
                 checked={progress.includes(material.title)}
@@ -69,7 +60,7 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
                 onClick={() => openModal(material.title)}
                 style={{ marginRight: '10px' }}
               >
-                <NoteIcon style={{ color: notes[material.title] ? 'orange' : 'inherit' }} />
+                <NoteIcon style={{ color: notes[`${subjectName}-${material.title}`] ? 'orange' : 'inherit' }} />
               </IconButton>
               <IconButton
                 aria-label="view"
@@ -103,7 +94,7 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '80%', // Adjusted width for larger popup
+            width: '80%',
             maxWidth: '700px',
             padding: '20px',
             borderRadius: '10px',

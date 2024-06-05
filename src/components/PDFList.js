@@ -45,7 +45,16 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
       </Typography>
       <List>
         {materials.map((material, index) => (
-          <ListItem key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <ListItem
+            key={index}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '8px 0', // Adjusted padding
+            }}
+          >
+
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
                 checked={progress.includes(material.title)}
@@ -94,8 +103,8 @@ const PDFList = ({ materials, progress, onToggleProgress, subjectName }) => {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '50%',
-            maxWidth: '500px',
+            width: '80%', // Adjusted width for larger popup
+            maxWidth: '700px',
             padding: '20px',
             borderRadius: '10px',
           },

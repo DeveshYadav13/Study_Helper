@@ -37,7 +37,8 @@ const subjects = [
       materials: [
         { title: "2017", url: "/path/to/SC_2017.pdf" },
         { title: "2018", url: "/path/to/SC_2018.pdf" },
-        { title: "2023", url: "/path/to/SC_2020.pdf" },
+        { title: "2020", url: "/path/to/SC_2020.pdf" },
+        { title: "2023", url: "/path/to/SC_2023.pdf" },
         { title: "All", url: "/path/to/SC.pdf" }
       ]
     },
